@@ -11,7 +11,7 @@ export default function Home() {
                         <p>{context.dictionary["text1"]}</p>
                         <p>{context.dictionary["text2"]}</p>
                         <div>
-                            <img src={'minijuegos.jpg'} className="img" alt="logo" />
+                            <img src={'minijuegos.jpg'} className="img"/>
                         </div>
                     </main>
                 );
