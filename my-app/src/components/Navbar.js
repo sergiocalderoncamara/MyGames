@@ -1,8 +1,5 @@
 import React, { useContext } from 'react';
 import { Routes, Route, Link, NavLink } from "react-router-dom";
-import Home from './routes/Home';
-import TicTacToe from './routes/TicTacToe';
-import Quiz from './routes/Quiz';
 import { LangContext } from './App';
 import LangSelector from './LangSelector';
 
@@ -21,11 +18,6 @@ export default function Navbar(props) {
                 <li><NavLink to="/tictactoe">TicTacToe</NavLink></li>
                 <li><NavLink to="/quiz">Quiz</NavLink></li>
             </nav>
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/tictactoe" element={<TicTacToe />} />
-                <Route path="/quiz" element={<Quiz />} />
-            </Routes>
         </>
     );
 }
