@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { LangContext } from './App';
 import LangSelector from './LangSelector';
 

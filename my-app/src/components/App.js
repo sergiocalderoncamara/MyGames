@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from 'react';
-import { Routes, Route, Link, NavLink } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from './Navbar';
 import Home from './routes/Home';
 import TicTacToe from './routes/TicTacToe';
@@ -19,9 +19,7 @@ function App(props) {
   useEffect(() => {
     async function fetchData() {
       try {
-        console.log('entra');
         setQuizzes(quizzesInit);
-        console.log({ quizzes });
       } catch (error) {
         alert("error");
       }
