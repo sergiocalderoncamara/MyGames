@@ -4,10 +4,7 @@ import Author from './Author';
 import Actionbar from './Actionbar';
 import Answer from './Answer';
 
-export default function Game(props) {
-
-    const isNull = (props.quiz.attachment == null);
-
+export default function Game(props) { 
     return (
         <>
             <div>
@@ -15,7 +12,7 @@ export default function Game(props) {
             </div>
             <div>
                 {(() => {
-                    if (isNull) {
+                    if (!props.quiz.attachment || props.quiz.attachment == null) {
                         return (
                             <img src="notfound.jpg" alt="question image" />
                         )
@@ -36,6 +33,7 @@ export default function Game(props) {
                 <Actionbar
                     previous={props.previous} previousDisabled={props.previousDisabled}
                     next={props.next} nextDisabled={props.nextDisabled}
+                    comprobar={props.comprobar}
                 />
             </div>
         </>

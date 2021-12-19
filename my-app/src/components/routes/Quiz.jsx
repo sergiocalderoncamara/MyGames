@@ -9,34 +9,38 @@ export default function Quiz(props) {
     const [currentQuiz, setCurrentQuiz] = useState(0);
     const [previousDisabled, setPreviousDisabled] = useState(true);
     const [nextDisabled, setNextDisabled] = useState(false);
-    const [answers, setAnswers] = useState(['','','','','','','','','','']);
+    const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
 
     const previous = () => {
         let id = currentQuiz;
-        if (id > 0) {
-            id--;
-            setCurrentQuiz(id);
-            setPreviousDisabled(false);
-            setNextDisabled(false);
-        } else {
-            setPreviousDisabled(true);
-        }
+        id--;
+        setCurrentQuiz(id);
+        control(id);
     }
 
     const next = () => {
         let id = currentQuiz;
-        if (id < props.quizzes.length - 1) {
-            id++;
-            setCurrentQuiz(id);
-            setPreviousDisabled(false);
-            setNextDisabled(false);
-        } else {
-            setNextDisabled(true);
-        }
+        id++;
+        setCurrentQuiz(id);
+        control(id);
     }
 
     const indice = (indice) => {
         setCurrentQuiz(indice);
+        control(indice);
+    }
+
+    const control = (indice) => {
+        if (indice <= 0) {
+            setPreviousDisabled(true);
+            setNextDisabled(false);
+        } else if (indice >= props.quizzes.length - 1) {
+            setPreviousDisabled(false);
+            setNextDisabled(true);
+        } else {
+            setPreviousDisabled(false);
+            setNextDisabled(false);
+        }
     }
 
     const recogerAnswer = (resultado) => {
@@ -45,20 +49,47 @@ export default function Quiz(props) {
         setAnswers(copia);
     }
 
+    const comprobar = () => {
+        let c = 0;
+        props.quizzes.forEach((element, index) => {
+            if (element.answer.toLowerCase() === answers[index].toLowerCase()) {
+                c++;
+            }
+        });
+        setScore(c);
+        setFinished(true);
+    }
+
     return (
         <main>
             <h2>Quiz</h2>
-            <Game 
-            quiz={props.quizzes[currentQuiz]} 
-            number={currentQuiz} 
-            previous={previous} previousDisabled={previousDisabled} 
-            next={next} nextDisabled={nextDisabled}
-            resultado={recogerAnswer} />
-            <div>
-                {props.quizzes.map((quiz,index) =>
-                    <Shortcut key={index} number={index} indice={indice}/>
-                )}
-            </div>
+
+            {(() => {
+                if (finished) {
+                    return (
+                        <h3>Score: {score}</h3>
+                    )
+                } else {
+                    return (
+                        <>
+                            <Game
+                                quiz={props.quizzes[currentQuiz]}
+                                number={currentQuiz}
+                                previous={previous} previousDisabled={previousDisabled}
+                                next={next} nextDisabled={nextDisabled}
+                                resultado={recogerAnswer}
+                                comprobar={comprobar} />
+                            <div>
+                                {props.quizzes.map((quiz, index) =>
+                                    <Shortcut key={index} number={index} indice={indice} />
+                                )}
+                            </div>
+
+                        </>
+                    )
+                }
+            })()}
+
         </main>
     );
 }
