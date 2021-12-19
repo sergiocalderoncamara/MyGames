@@ -2,6 +2,7 @@ import React from 'react';
 import Question from './Question';
 import Author from './Author';
 import Actionbar from './Actionbar';
+import Answer from './Answer';
 
 export default function Game(props) {
 
@@ -27,6 +28,9 @@ export default function Game(props) {
             </div>
             <div>
                 <Author author={props.quiz.author} />
+            </div>
+            <div>
+                <Answer resultado={props.resultado}/>
             </div>
             <div>
                 <Actionbar

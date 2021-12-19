@@ -9,6 +9,7 @@ export default function Quiz(props) {
     const [currentQuiz, setCurrentQuiz] = useState(0);
     const [previousDisabled, setPreviousDisabled] = useState(true);
     const [nextDisabled, setNextDisabled] = useState(false);
+    const [answers, setAnswers] = useState(['','','','','','','','','','']);
 
     const previous = () => {
         let id = currentQuiz;
@@ -38,6 +39,12 @@ export default function Quiz(props) {
         setCurrentQuiz(indice);
     }
 
+    const recogerAnswer = (resultado) => {
+        let copia = answers;
+        copia.splice(currentQuiz, 1, resultado);
+        setAnswers(copia);
+    }
+
     return (
         <main>
             <h2>Quiz</h2>
@@ -45,7 +52,8 @@ export default function Quiz(props) {
             quiz={props.quizzes[currentQuiz]} 
             number={currentQuiz} 
             previous={previous} previousDisabled={previousDisabled} 
-            next={next} nextDisabled={nextDisabled} />
+            next={next} nextDisabled={nextDisabled}
+            resultado={recogerAnswer} />
             <div>
                 {props.quizzes.map((quiz,index) =>
                     <Shortcut key={index} number={index} indice={indice}/>
