@@ -6,7 +6,8 @@ import TicTacToe from './routes/TicTacToe';
 import Quiz from './routes/Quiz';
 import en from '../lang/en.json';
 import es from '../lang/es.json';
-import { quizzesInit } from '../assets/mock-data';
+//import { quizzesInit } from '../assets/mock-data';
+import {postAPI, getAPI, updateAPI} from "../api";
 
 const dictionaryList = { en, es };
 export const LangContext = createContext({ userlang: 'es', dictionary: es });
@@ -15,17 +16,23 @@ function App(props) {
 
   const [lang, setLang] = useState('en');
   const [quizzes, setQuizzes] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const download = async ()  => {
+    let downloadedQuizzes = await getAPI();
+    setQuizzes(downloadedQuizzes); 
+  }
 
   useEffect(() => {
     async function fetchData() {
       try {
-        setQuizzes(quizzesInit);
+          await download();
       } catch (error) {
         alert("error");
       }
     }
     fetchData();
-  });
+  }, []);
 
   const handleLanguageChange = (event) => {
     setLang(event.target.value);
