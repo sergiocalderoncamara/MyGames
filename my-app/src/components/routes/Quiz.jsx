@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Game from '../Game';
+import Shortcut from '../Shortcut';
 
 export default function Quiz(props) {
 
@@ -33,6 +34,10 @@ export default function Quiz(props) {
         }
     }
 
+    const indice = (indice) => {
+        setCurrentQuiz(indice);
+    }
+
     return (
         <main>
             <h2>Quiz</h2>
@@ -41,6 +46,11 @@ export default function Quiz(props) {
             number={currentQuiz} 
             previous={previous} previousDisabled={previousDisabled} 
             next={next} nextDisabled={nextDisabled} />
+            <div>
+                {props.quizzes.map((quiz,index) =>
+                    <Shortcut key={index} number={index} indice={indice}/>
+                )}
+            </div>
         </main>
     );
 }

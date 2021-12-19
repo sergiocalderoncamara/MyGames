@@ -16,7 +16,6 @@ function App(props) {
 
   const [lang, setLang] = useState('en');
   const [quizzes, setQuizzes] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const download = async ()  => {
     let downloadedQuizzes = await getAPI();
