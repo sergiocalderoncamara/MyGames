@@ -14,9 +14,9 @@ export default function Square(props) {
   }
 
   return(
-    <button style={squareStyle} onClick={squareClick} className={props.value === "-" ? "clickable" : "no_clickable"}>
-      {props.value}
-    </button>
+      <button style={squareStyle} onClick={squareClick} className={props.value === "-" ? "clickable" : "no_clickable"}>
+        {props.value}
+      </button>
   );
   
 }

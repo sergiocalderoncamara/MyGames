@@ -9,5 +9,6 @@
     "next": "Next",
     "turn": "Turn",
     "player": "Turn of Player",
-    "moves": "Number of moves: "
+    "moves": "Number of moves: ",
+    "reset": "Reset"
 }

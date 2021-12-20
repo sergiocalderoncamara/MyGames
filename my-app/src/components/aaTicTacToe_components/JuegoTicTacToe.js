@@ -17,8 +17,6 @@ export default function App(props) {
     ['-', '-', '-']
     ]);
 
-  let tenemosGanador = false;
-
   function resetClick(){
     setTurn(PLAYERX);
     setMoves(0);
@@ -29,66 +27,73 @@ export default function App(props) {
     ]);
   }
 
-  function areWinner(ganadores) {
-    tenemosGanador = true;  
-    if (ganadores==='X'){
-      alert("Han ganado las X")
-    }
-    else if (ganadores==='0'){
-      alert("Han ganado los 0")
-    }
-  }
-
-
+  let tenemosGanador = false;
+  let elGanadorEs = "";
   function appWin() {
     if ((values[0][0]==='X') && (values[0][1]==='X') && (values[0][2]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[0][0]==='X') && (values[1][1]==='X') && (values[2][2]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[0][0]==='X') && (values[1][0]==='X') && (values[2][0]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[1][0]==='X') && (values[1][1]==='X') && (values[1][2]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[2][0]==='X') && (values[2][1]==='X') && (values[2][2]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[0][1]==='X') && (values[1][1]==='X') && (values[2][1]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[0][2]==='X') && (values[1][2]==='X') && (values[2][2]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     if ((values[0][2]==='X') && (values[1][1]==='X') && (values[2][0]==='X')){
-      areWinner('X');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LAS Xs!';
     }
     
     if ((values[0][0]==='0') && (values[0][1]==='0') && (values[0][2]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[0][0]==='0') && (values[1][1]==='0') && (values[2][2]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[0][0]==='0') && (values[1][0]==='0') && (values[2][0]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[1][0]==='0') && (values[1][1]==='0') && (values[1][2]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[2][0]==='0') && (values[2][1]==='0') && (values[2][2]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[0][1]==='0') && (values[1][1]==='0') && (values[2][1]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[0][2]==='0') && (values[1][2]==='0') && (values[2][2]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
     if ((values[0][2]==='0') && (values[1][1]==='0') && (values[2][0]==='0')){
-      areWinner('0');
+      tenemosGanador = true;
+      elGanadorEs = '¡HAN GANADO LOS 0s!';
     }
   }
 
@@ -112,12 +117,11 @@ export default function App(props) {
   return (
     <div class='tictactoe'>
       <Header text={text}/>
-      <Board values={values}  appClick={appClick} areWinner={areWinner}/>
+      <Board values={values}  appClick={appClick} elGanadorEs={elGanadorEs}/>
       <h3>{lang.dictionary["moves"]} {moves}</h3>
       <Reset resetClick={resetClick}></Reset>
+      <div class='mostrarGanador'>{elGanadorEs}</div>
     </div>
   );
-
-
 
 }

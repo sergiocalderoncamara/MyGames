@@ -78,3 +78,9 @@ nav {
   font-weight: bolder;
   text-align: center;
 }
+
+.mostrarGanador {
+  font-weight: bolder;
+  margin: 10px;
+  padding: 5px;
+}

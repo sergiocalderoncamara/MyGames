@@ -9,5 +9,6 @@
     "next": "Siguiente",
     "turn": "Turno",
     "player": "Turno del Jugador",
-    "moves": "Número de movimientos: "
+    "moves": "Número de movimientos: ",
+    "reset": "Resetear"
 }
