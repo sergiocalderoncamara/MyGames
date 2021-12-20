@@ -10,5 +10,7 @@
     "turn": "Turno",
     "player": "Turno del Jugador",
     "moves": "Número de movimientos: ",
-    "reset": "Resetear"
+    "reset": "Resetear",
+    "winnerX": "¡Han ganado las X's!",
+    "winner0": "¡Han ganado los 0's!"
 }
