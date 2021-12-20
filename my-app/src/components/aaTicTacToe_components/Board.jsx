@@ -2,6 +2,7 @@ import React from 'react';
 import Square from './Square';
 
 export default function Board(props) {
+    
   function boardClick(rowNumber, columnNumber) {
     props.appClick(rowNumber, columnNumber);
   }
@@ -13,6 +14,7 @@ export default function Board(props) {
                   columnIndex={columnIndex} boardClick={boardClick}/>
       );
    });
+
    return (
       <div key={"row" + rowIndex}>
         {row}
