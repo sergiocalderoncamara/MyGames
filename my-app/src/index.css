@@ -68,3 +68,13 @@ nav {
   align-items: center;
   justify-content: space-evenly;
 }
+
+.tictactoe {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.card {
+  font-weight: bolder;
+  text-align: center;
+}
