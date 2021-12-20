@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import Game from '../Game';
-import Shortcut from '../Shortcut';
+import Game from '../aaQuiz_components/Game';
+import Shortcut from '../aaQuiz_components/Shortcut';
 
 export default function Quiz(props) {
 

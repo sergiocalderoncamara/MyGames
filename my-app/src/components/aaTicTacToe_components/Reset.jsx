@@ -1,21 +1,15 @@
 import React from 'react';
 import {Button} from 'react-bootstrap';
 
-export default class Reset extends React.Component {
-    constructor(props) {
-        super(props);
-        this.click = this.click.bind(this);
-    }
+export default function Reset(props) {
+  function click() {
+    props.resetClick();
+  }
 
-    click() {
-        this.props.resetClick();
-    }
-
-    render() {
-        return(
-          <Button onClick={this.click} >
-            Reset
-          </Button>
-        );
-    }
+  return(
+    <Button onClick={click} >
+      Reset
+    </Button>
+  );
+    
 }

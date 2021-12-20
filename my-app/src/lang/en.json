@@ -6,5 +6,8 @@
     "text1": "Here you will be able to play different MiniGames",
     "text2": "Choose the game you want to play by clicking on the navbar",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "turn": "Turn",
+    "player": "Turn of Player",
+    "moves": "Number of moves: "
 }

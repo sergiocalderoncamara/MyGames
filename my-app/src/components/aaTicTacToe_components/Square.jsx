@@ -5,21 +5,18 @@ const squareStyle = {
   width: '100px',
 };
 
-export default class Square extends React.Component {
-  constructor(props) {
-    super(props);
-    this.squareClick = this.squareClick.bind(this);
-  }
-  squareClick() {
-    if(this.props.value === "-") {
-      this.props.boardClick(this.props.rowIndex, this.props.columnIndex);
+export default function Square(props) {
+  
+  function squareClick() {
+    if(props.value === "-") {
+      props.boardClick(props.rowIndex, props.columnIndex);
     }
   }
-  render() {
-    return(
-      <button style={squareStyle} onClick={this.squareClick} className={this.props.value === "-" ? "clickable" : "no_clickable"}>
-        {this.props.value}
-      </button>
-    );
-  }
+
+  return(
+    <button style={squareStyle} onClick={squareClick} className={props.value === "-" ? "clickable" : "no_clickable"}>
+      {props.value}
+    </button>
+  );
+  
 }

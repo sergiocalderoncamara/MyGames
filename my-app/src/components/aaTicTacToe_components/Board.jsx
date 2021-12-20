@@ -1,33 +1,29 @@
 import React from 'react';
 import Square from './Square';
 
-export default class Board extends React.Component {
-  constructor(props) {
-    super(props);
-    this.boardClick = this.boardClick.bind(this);
+export default function Board(props) {
+  function boardClick(rowNumber, columnNumber) {
+    props.appClick(rowNumber, columnNumber);
   }
-  boardClick(rowNumber, columnNumber) {
-    this.props.appClick(rowNumber, columnNumber);
-  }
-  render() {
-    let board = this.props.values.map((rowValues, rowIndex) => {
-      let row = rowValues.map((value, columnIndex) => {
-          return (
-            <Square value={value} key={rowIndex + "-" + columnIndex} rowIndex={rowIndex}
-                    columnIndex={columnIndex} boardClick={this.boardClick}/>
-        );
-      });
-      return (
-        <div key={"row" + rowIndex}>
-          {row}
-        </div>
-      );
-    });
 
-    return (
-       <div>
-        {board}
-       </div>
+  let board = props.values.map((rowValues, rowIndex) => {
+  let row = rowValues.map((value, columnIndex) => {
+      return (
+          <Square value={value} key={rowIndex + "-" + columnIndex} rowIndex={rowIndex}
+                  columnIndex={columnIndex} boardClick={boardClick}/>
+      );
+   });
+   return (
+      <div key={"row" + rowIndex}>
+        {row}
+      </div>
     );
-  }
+  });
+
+  return (
+     <div>
+      {board}
+     </div>
+  );
+  
 }

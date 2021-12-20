@@ -1,20 +1,20 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import { LangContext } from '../App';
 import {Card} from 'react-bootstrap';
 
-export default class Header extends React.Component {
-    render() {
-        return (
-          <Card >
-            <Card.Body>
-              <Card.Title>Turn</Card.Title>
-              <Card.Text>
-               {this.props.text}
-               
-              </Card.Text>
-            </Card.Body>
-          </Card>
-        );
+export default function Header(props) {
+
+    const lang = useContext(LangContext);
+
+    return (
+      <Card>
+        <Card.Body>
+          <Card.Title>{lang.dictionary["turn"]}</Card.Title>
+          <Card.Text>
+            {props.text}
+            
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    );
     }
-
-}
-
