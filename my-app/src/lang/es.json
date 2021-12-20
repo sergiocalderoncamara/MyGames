@@ -1,10 +1,15 @@
 {
     "en": "Inglés",
     "es": "Español",
+    "language": "Idioma",
     "title": "Mis Juegos",
     "welcome": "Bienvenido a MiniJuegos React",
     "text1": "Aquí podrás jugar a diferentes MiniJuegos",
     "text2": "Elije al que quieras jugar clicando en la barra de navegación",
     "previous": "Anterior",
-    "next": "Siguiente"
+    "next": "Siguiente",
+    "submit": "Enviar",
+    "question": "Pregunta",
+    "answer": "Respuesta",
+    "score": "Puntuación"
 }

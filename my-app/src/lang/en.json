@@ -1,10 +1,15 @@
 {
     "en": "English",
     "es": "Spanish",
+    "language": "Language",
     "title": "My Games",
     "welcome": "Welcome to MiniGames React",
     "text1": "Here you will be able to play different MiniGames",
     "text2": "Choose the game you want to play by clicking on the navbar",
     "previous": "Previous",
-    "next": "Next"
+    "next": "Next",
+    "submit": "Submit",
+    "question": "Question",
+    "answer": "Answer",
+    "score": "Score"
 }

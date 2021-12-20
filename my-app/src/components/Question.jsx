@@ -1,9 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
+import { LangContext } from './App';
 
 export default function Question (props) {
+
+    const lang = useContext(LangContext);
+
     return (
         <>
-            <h3>Question {props.number + 1}</h3>
+            <h3 className="display-3">{lang.dictionary["question"]} {props.number + 1}</h3>
             {props.question}
         </>
     );

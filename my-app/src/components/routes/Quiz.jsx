@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import Game from '../Game';
 import Shortcut from '../Shortcut';
+import { LangContext } from '../App';
 
 export default function Quiz(props) {
 
@@ -10,6 +11,7 @@ export default function Quiz(props) {
     const [previousDisabled, setPreviousDisabled] = useState(true);
     const [nextDisabled, setNextDisabled] = useState(false);
     const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
+    const lang = useContext(LangContext);
 
     const previous = () => {
         let id = currentQuiz;
@@ -62,16 +64,21 @@ export default function Quiz(props) {
 
     return (
         <main>
-            <h2>Quiz</h2>
-
             {(() => {
                 if (finished) {
                     return (
-                        <h3>Score: {score}</h3>
+                        <h3 className='display-3'>{lang.dictionary["score"]}: {score}</h3>
                     )
                 } else {
                     return (
                         <>
+                            <div className='row mt-2'>
+                                <div className='col-12 btn-group' role="group" aria-label="Basic outlined example">
+                                    {props.quizzes.map((quiz, index) =>
+                                        <Shortcut key={index} number={index} indice={indice} />
+                                    )}
+                                </div>
+                            </div>
                             <Game
                                 quiz={props.quizzes[currentQuiz]}
                                 number={currentQuiz}
@@ -79,12 +86,6 @@ export default function Quiz(props) {
                                 next={next} nextDisabled={nextDisabled}
                                 resultado={recogerAnswer}
                                 comprobar={comprobar} />
-                            <div>
-                                {props.quizzes.map((quiz, index) =>
-                                    <Shortcut key={index} number={index} indice={indice} />
-                                )}
-                            </div>
-
                         </>
                     )
                 }

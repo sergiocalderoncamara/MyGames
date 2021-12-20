@@ -1,7 +1,7 @@
 import React from "react";
 
 
-export default function Shortcut (props) {
+export default function Shortcut(props) {
 
     const numeroRespuesta = props.number;
 
@@ -11,7 +11,7 @@ export default function Shortcut (props) {
 
     return (
         <>
-        <button className={props.number + 1} onClick={seleccion}>{props.number + 1}</button>
+            <button type="button" className="btn btn-outline-primary" onClick={seleccion}>{props.number + 1}</button>
         </>
     );
 }

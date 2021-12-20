@@ -8,21 +8,21 @@ export default function Author (props) {
                         return(
                             <>
                             unknown
-                            <img src="notfound.jpg" alt="foto" /> 
+                            <img src="notfound.jpg" className="author rounded-circle" alt="foto" /> 
                             </>
                         )
                     } else if (!props.author.username || props.author.username == null) {
                         return (
                             <>
                             unknown
-                            <img src={props.author.photo.url} alt={props.author.photo.filename} />
+                            <img src={props.author.photo.url} className="author rounded-circle" alt={props.author.photo.filename} />
                             </>
                         )
                     } else {
                         return (
                             <>
                             {props.author.username}
-                            <img src={props.author.photo.url} alt={props.author.photo.filename} />
+                            <img src={props.author.photo.url} className="author rounded-circle" alt={props.author.photo.filename} />
                             </>
                         )
                     }

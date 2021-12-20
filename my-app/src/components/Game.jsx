@@ -4,37 +4,43 @@ import Author from './Author';
 import Actionbar from './Actionbar';
 import Answer from './Answer';
 
-export default function Game(props) { 
+export default function Game(props) {
     return (
         <>
-            <div>
-                <Question question={props.quiz.question} number={props.number} />
+            <div className='row mt-5'>
+                <div className='col-6'>
+                    {(() => {
+                        if (!props.quiz.attachment || props.quiz.attachment == null) {
+                            return (
+                                <img src="notfound.jpg" className="img-thumbnail imagen" alt="question image" />
+                            )
+                        } else {
+                            return (
+                                <img src={props.quiz.attachment.url} className="img-thumbnail imagen" alt="question image" />
+                            )
+                        }
+                    })()}
+                </div>
+                <div className='col-6'>
+                    <div className='col-12 text-center my-3'>
+                        <Question question={props.quiz.question} number={props.number} />
+                    </div>
+                    <div className='col-12 text-center'>
+                        <Answer resultado={props.resultado} />
+                    </div>
+                </div>
             </div>
-            <div>
-                {(() => {
-                    if (!props.quiz.attachment || props.quiz.attachment == null) {
-                        return (
-                            <img src="notfound.jpg" alt="question image" />
-                        )
-                    } else {
-                        return (
-                            <img src={props.quiz.attachment.url} alt="question image" />
-                        )
-                    }
-                })()}
-            </div>
-            <div>
-                <Author author={props.quiz.author} />
-            </div>
-            <div>
-                <Answer resultado={props.resultado}/>
-            </div>
-            <div>
-                <Actionbar
-                    previous={props.previous} previousDisabled={props.previousDisabled}
-                    next={props.next} nextDisabled={props.nextDisabled}
-                    comprobar={props.comprobar}
-                />
+            <div className='row mt-1'>
+                <div className='col-6'>
+                    <Author author={props.quiz.author} />
+                </div>
+                <div className='col-6 text-center'>
+                    <Actionbar
+                        previous={props.previous} previousDisabled={props.previousDisabled}
+                        next={props.next} nextDisabled={props.nextDisabled}
+                        comprobar={props.comprobar}
+                    />
+                </div>
             </div>
         </>
 
