@@ -11,5 +11,11 @@
     "submit": "Enviar",
     "question": "Pregunta",
     "answer": "Respuesta",
-    "score": "Puntuación"
+    "score": "Puntuación",
+    "turn": "Turno",
+    "player": "Turno del Jugador",
+    "moves": "Número de movimientos: ",
+    "reset": "Resetear",
+    "winnerX": "¡Han ganado las X's!",
+    "winner0": "¡Han ganado los 0's!"
 }

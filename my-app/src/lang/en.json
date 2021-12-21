@@ -11,5 +11,11 @@
     "submit": "Submit",
     "question": "Question",
     "answer": "Answer",
-    "score": "Score"
+    "score": "Score",
+    "turn": "Turn",
+    "player": "Turn of Player",
+    "moves": "Number of moves: ",
+    "reset": "Reset",
+    "winnerX": "The X's win!",
+    "winner0": "The 0's win!"
 }
