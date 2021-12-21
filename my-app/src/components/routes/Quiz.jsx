@@ -20,7 +20,7 @@ export default function Quiz(props) {
         id--;
         setCurrentQuiz(id);
         control(id);
-        setInputValue("");
+        setInputValue(answers[id]);
     }
 
     const next = () => {
@@ -28,13 +28,13 @@ export default function Quiz(props) {
         id++;
         setCurrentQuiz(id);
         control(id);
-        setInputValue("");
+        setInputValue(answers[id]);
     }
 
     const indice = (indice) => {
         setCurrentQuiz(indice);
         control(indice);
-        setInputValue("");
+        setInputValue(answers[indice]);
     }
 
     const control = (indice) => {
@@ -66,6 +66,7 @@ export default function Quiz(props) {
         });
         setScore(c);
         setFinished(true);
+        setAnswers(['', '', '', '', '', '', '', '', '', ''])
     }
 
     const quizDownload2 = () => {
