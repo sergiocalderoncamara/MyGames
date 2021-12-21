@@ -1,8 +1,7 @@
 import React, { useContext } from 'react';
-import { NavLink } from "react-router-dom";
 import { LangContext } from './App';
 import LangSelector from './LangSelector';
-import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
+import { Navbar, Nav, Container } from 'react-bootstrap';
 
 export default function Menu(props) {
 
@@ -14,7 +13,7 @@ export default function Menu(props) {
                 <h1 className='mygames'>{lang.dictionary["title"]}</h1>
                 <LangSelector />
             </div>
-            <Navbar bg="primary" expand="lg" variant="dark">
+            <Navbar bg="primary" expand="lg" variant="dark" className='sticky-top'>
                 <Container>
                     <Navbar.Brand href="/">Home</Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />

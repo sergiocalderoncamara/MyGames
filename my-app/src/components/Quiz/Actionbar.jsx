@@ -18,6 +18,9 @@ export default function Actionbar(props) {
                 <button type="button" className="btn btn-lg btn-primary" onClick={props.next} disabled={props.nextDisabled}>
                     {lang.dictionary['next']}
                 </button>
+                <button type="button" className="btn btn-lg btn-primary" onClick={props.gameDownload2}>
+                    {lang.dictionary['reset']}
+                </button>
             </div>
         </>
     );

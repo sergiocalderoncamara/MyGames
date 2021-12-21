@@ -5,6 +5,11 @@ import Actionbar from './Actionbar';
 import Answer from './Answer';
 
 export default function Game(props) {
+
+    const gameDownload2 = () => {
+        props.quizDownload2();
+    }
+
     return (
         <>
             <div className='row mt-5'>
@@ -39,6 +44,7 @@ export default function Game(props) {
                         previous={props.previous} previousDisabled={props.previousDisabled}
                         next={props.next} nextDisabled={props.nextDisabled}
                         comprobar={props.comprobar}
+                        gameDownload2={gameDownload2}
                     />
                 </div>
             </div>

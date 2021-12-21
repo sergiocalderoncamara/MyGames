@@ -62,12 +62,26 @@ export default function Quiz(props) {
         setFinished(true);
     }
 
+    const quizDownload2 = () => {
+        props.appDownload2();
+        setFinished(false);
+        setScore(0);
+        setCurrentQuiz(0);
+    }
+
     return (
         <main>
             {(() => {
                 if (finished) {
                     return (
-                        <h3 className='display-3'>{lang.dictionary["score"]}: {score}</h3>
+                        <>
+                            <h3 className='display-3'>{lang.dictionary["score"]}: {score}</h3>
+                            <div>
+                                <button type="button" className="btn btn-lg btn-primary" onClick={quizDownload2}>
+                                    {lang.dictionary['reset']}
+                                </button>
+                            </div>
+                        </>
                     )
                 } else {
                     return (
@@ -85,7 +99,8 @@ export default function Quiz(props) {
                                 previous={previous} previousDisabled={previousDisabled}
                                 next={next} nextDisabled={nextDisabled}
                                 resultado={recogerAnswer}
-                                comprobar={comprobar} />
+                                comprobar={comprobar}
+                                quizDownload2={quizDownload2} />
                         </>
                     )
                 }

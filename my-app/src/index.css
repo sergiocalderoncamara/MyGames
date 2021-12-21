@@ -108,3 +108,12 @@ nav {
   margin: 10px;
   padding: 5px;
 }
+
+.footer {
+  color: #ffffff;
+  background-color: #2b6aa1;
+  padding: 15px 15px;
+  margin-top: 50px;
+  bottom: 0%;
+}
+

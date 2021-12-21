@@ -17,5 +17,6 @@
     "moves": "Number of moves: ",
     "reset": "Reset",
     "winnerX": "The X's win!",
-    "winner0": "The 0's win!"
+    "winner0": "The 0's win!",
+    "footer": "© This page was created by Sergio and Jaime"
 }

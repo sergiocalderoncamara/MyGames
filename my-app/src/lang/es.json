@@ -17,5 +17,6 @@
     "moves": "Número de movimientos: ",
     "reset": "Resetear",
     "winnerX": "¡Han ganado las X's!",
-    "winner0": "¡Han ganado los 0's!"
+    "winner0": "¡Han ganado los 0's!",
+    "footer": "© Esta página ha sido creada por Sergio y Jaime"
 }

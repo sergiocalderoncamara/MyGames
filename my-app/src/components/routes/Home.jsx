@@ -11,7 +11,7 @@ export default function Home() {
                         <p>{lang.dictionary["text1"]}</p>
                         <p>{lang.dictionary["text2"]}</p>
                         <div>
-                            <img src={'minijuegos.jpg'} className="img"/>
+                            <img src={'minijuegos.jpg'} className="img-thumbnail imagen"/>
                         </div>
                     </main>
     );
