@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LangContext } from './App';
+import { LangContext } from '../App';
 import { FontAwesomeIcon } from '@fortawesome/fontawesome-free'
 
 export default function Actionbar(props) {

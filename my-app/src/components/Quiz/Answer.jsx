@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { LangContext } from './App';
+import { LangContext } from "../App";
 
 export default function Answer(props) {
 

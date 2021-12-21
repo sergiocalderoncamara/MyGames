@@ -1,6 +1,6 @@
 import React, { useState, useContext } from 'react';
-import Game from '../Game';
-import Shortcut from '../Shortcut';
+import Game from '../Quiz/Game';
+import Shortcut from '../Quiz/Shortcut';
 import { LangContext } from '../App';
 
 export default function Quiz(props) {
