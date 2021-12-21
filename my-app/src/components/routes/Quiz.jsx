@@ -12,6 +12,7 @@ export default function Quiz(props) {
     const [nextDisabled, setNextDisabled] = useState(false);
     const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
     const [inputValue, setInputValue] = useState("");
+    const [contadorPistas, setContadorPistas] = useState(3);
     const lang = useContext(LangContext);
 
     const previous = () => {
@@ -73,6 +74,18 @@ export default function Quiz(props) {
         setScore(0);
         setCurrentQuiz(0);
         setInputValue("");
+        setContadorPistas(3);
+    }
+
+    const pista = () => {
+        let copia = contadorPistas;
+        if (copia > 0) {
+            setInputValue(props.quizzes[currentQuiz].answer);
+            recogerAnswer(props.quizzes[currentQuiz].answer);
+            copia--;
+            console.log(copia);
+        }
+        setContadorPistas(copia);
     }
 
     return (
@@ -107,7 +120,9 @@ export default function Quiz(props) {
                                 resultado={recogerAnswer}
                                 input={inputValue}
                                 comprobar={comprobar}
-                                quizDownload2={quizDownload2} />
+                                quizDownload2={quizDownload2}
+                                pista={pista}
+                                contadorPistas={contadorPistas} />
                         </>
                     )
                 }

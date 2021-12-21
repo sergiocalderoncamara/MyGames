@@ -12,14 +12,17 @@ export default function Actionbar(props) {
                 <button type="button" className="btn btn-lg btn-primary" onClick={props.previous} disabled={props.previousDisabled}>
                     {lang.dictionary['previous']}
                 </button>
-                <button type="button" className="btn btn-lg btn-primary" onClick={props.comprobar}>
-                    {lang.dictionary["submit"]}
-                </button>
                 <button type="button" className="btn btn-lg btn-primary" onClick={props.next} disabled={props.nextDisabled}>
                     {lang.dictionary['next']}
                 </button>
                 <button type="button" className="btn btn-lg btn-primary" onClick={props.gameDownload2}>
                     {lang.dictionary['reset']}
+                </button>
+                <button type="button" className="btn btn-lg btn-danger" onClick={props.pista}>
+                    {lang.dictionary['clue']}: ({props.contadorPistas})
+                </button>
+                <button type="button" className="btn btn-lg btn-success" onClick={props.comprobar}>
+                    {lang.dictionary["submit"]}
                 </button>
             </div>
         </>

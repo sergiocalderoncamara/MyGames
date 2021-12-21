@@ -12,6 +12,7 @@
     "question": "Pregunta",
     "answer": "Respuesta",
     "score": "Puntuación",
+    "clue": "Pista",
     "turn": "Turno",
     "player": "Turno del Jugador",
     "moves": "Número de movimientos: ",

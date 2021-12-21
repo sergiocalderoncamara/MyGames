@@ -41,6 +41,8 @@ export default function Game(props) {
                         next={props.next} nextDisabled={props.nextDisabled}
                         comprobar={props.comprobar}
                         gameDownload2={props.quizDownload2}
+                        pista={props.pista}
+                        contadorPistas={props.contadorPistas}
                     />
                 </div>
             </div>

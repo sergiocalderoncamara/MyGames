@@ -12,6 +12,7 @@
     "question": "Question",
     "answer": "Answer",
     "score": "Score",
+    "clue": "Clue",
     "turn": "Turn",
     "player": "Turn of Player",
     "moves": "Number of moves: ",
