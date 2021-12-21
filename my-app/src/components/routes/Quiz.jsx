@@ -11,6 +11,7 @@ export default function Quiz(props) {
     const [previousDisabled, setPreviousDisabled] = useState(true);
     const [nextDisabled, setNextDisabled] = useState(false);
     const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
+    const [inputValue, setInputValue] = useState("");
     const lang = useContext(LangContext);
 
     const previous = () => {
@@ -18,6 +19,7 @@ export default function Quiz(props) {
         id--;
         setCurrentQuiz(id);
         control(id);
+        setInputValue("");
     }
 
     const next = () => {
@@ -25,11 +27,13 @@ export default function Quiz(props) {
         id++;
         setCurrentQuiz(id);
         control(id);
+        setInputValue("");
     }
 
     const indice = (indice) => {
         setCurrentQuiz(indice);
         control(indice);
+        setInputValue("");
     }
 
     const control = (indice) => {
@@ -49,6 +53,7 @@ export default function Quiz(props) {
         let copia = answers;
         copia.splice(currentQuiz, 1, resultado);
         setAnswers(copia);
+        setInputValue(resultado);
     }
 
     const comprobar = () => {
@@ -67,6 +72,7 @@ export default function Quiz(props) {
         setFinished(false);
         setScore(0);
         setCurrentQuiz(0);
+        setInputValue("");
     }
 
     return (
@@ -99,6 +105,7 @@ export default function Quiz(props) {
                                 previous={previous} previousDisabled={previousDisabled}
                                 next={next} nextDisabled={nextDisabled}
                                 resultado={recogerAnswer}
+                                input={inputValue}
                                 comprobar={comprobar}
                                 quizDownload2={quizDownload2} />
                         </>

@@ -6,10 +6,6 @@ import Answer from './Answer';
 
 export default function Game(props) {
 
-    const gameDownload2 = () => {
-        props.quizDownload2();
-    }
-
     return (
         <>
             <div className='row mt-5'>
@@ -31,7 +27,7 @@ export default function Game(props) {
                         <Question question={props.quiz.question} number={props.number} />
                     </div>
                     <div className='col-12 text-center'>
-                        <Answer resultado={props.resultado} />
+                        <Answer resultado={props.resultado} input={props.input} />
                     </div>
                 </div>
             </div>
@@ -44,7 +40,7 @@ export default function Game(props) {
                         previous={props.previous} previousDisabled={props.previousDisabled}
                         next={props.next} nextDisabled={props.nextDisabled}
                         comprobar={props.comprobar}
-                        gameDownload2={gameDownload2}
+                        gameDownload2={props.quizDownload2}
                     />
                 </div>
             </div>
