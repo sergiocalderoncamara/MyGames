@@ -1,20 +1,24 @@
-import React from "react";
+import React, {useContext} from "react";
+import { LangContext } from '../App';
 
 export default function Author (props) {
+
+    const lang = useContext(LangContext);
+
     return (
         <>
         {(() => {
                     if (!props.author || props.author == null) {
                         return(
                             <>
-                            unknown
+                            {lang.dictionary['unknown']}
                             <img src="notfound.jpg" className="author rounded-circle" alt="foto" /> 
                             </>
                         )
                     } else if (!props.author.username || props.author.username == null) {
                         return (
                             <>
-                            unknown
+                            {lang.dictionary['unknown']}
                             <img src={props.author.photo.url} className="author rounded-circle" alt={props.author.photo.filename} />
                             </>
                         )

@@ -102,6 +102,7 @@ export default function Quiz(props) {
 
     const quizDownload2 = () => {
         props.appDownload2();
+        control(0);
         setFinished(false);
         setScore(0);
         setCurrentQuiz(0);
