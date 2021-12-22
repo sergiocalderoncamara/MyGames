@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useContext } from 'react';
 import { LangContext } from '../App';
 import Header from '../TicTacToe/Header.jsx';
@@ -100,7 +100,7 @@ export default function App(props) {
   }
 
   function appClick(rowNumber, columnNumber) {
-    if (tenemosGanador == false) {
+    if (tenemosGanador === false) {
       let valuesCopy = JSON.parse(JSON.stringify(values));
       let newMovement = turn === PLAYERX ? 'X' : '0';
       valuesCopy[rowNumber][columnNumber] = newMovement;

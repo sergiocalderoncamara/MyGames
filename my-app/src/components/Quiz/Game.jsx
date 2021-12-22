@@ -3,8 +3,11 @@ import Question from './Question';
 import Author from './Author';
 import Actionbar from './Actionbar';
 import Answer from './Answer';
+import Timer from './Timer';
+
 
 export default function Game(props) {
+
 
     return (
         <>
@@ -29,6 +32,9 @@ export default function Game(props) {
                     <div className='col-12 text-center'>
                         <Answer resultado={props.resultado} input={props.input} />
                     </div>
+                    <div className='col-12 text-center'>
+                        <Timer horas={props.horas} minutos={props.minutos} segundos={props.segundos}/>
+                    </div> 
                 </div>
             </div>
             <div className='row mt-1'>

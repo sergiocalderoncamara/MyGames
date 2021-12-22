@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { LangContext } from '../App';
-import { FontAwesomeIcon } from '@fortawesome/fontawesome-free'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBackward, faForward, faRedo ,faPaperPlane } from '@fortawesome/free-solid-svg-icons'
 
 export default function Actionbar(props) {
 
@@ -9,20 +10,24 @@ export default function Actionbar(props) {
     return (
         <>
             <div className="btn-group" role="group" aria-label="Basic example">
-                <button type="button" className="btn btn-lg btn-primary" onClick={props.previous} disabled={props.previousDisabled}>
+                <button type="button" className="btn btn-primary" onClick={props.previous} disabled={props.previousDisabled}>
+                    <FontAwesomeIcon icon={faBackward} />
                     {lang.dictionary['previous']}
                 </button>
-                <button type="button" className="btn btn-lg btn-primary" onClick={props.next} disabled={props.nextDisabled}>
+                <button type="button" className="btn btn-primary" onClick={props.next} disabled={props.nextDisabled}>
                     {lang.dictionary['next']}
+                    <FontAwesomeIcon icon={faForward} />
                 </button>
-                <button type="button" className="btn btn-lg btn-primary" onClick={props.gameDownload2}>
+                <button type="button" className="btn btn-primary" onClick={props.gameDownload2}>
                     {lang.dictionary['reset']}
+                    <FontAwesomeIcon icon={faRedo} />
                 </button>
-                <button type="button" className="btn btn-lg btn-danger" onClick={props.pista}>
+                <button type="button" className="btn btn-danger" onClick={props.pista}>
                     {lang.dictionary['clue']}: ({props.contadorPistas})
                 </button>
-                <button type="button" className="btn btn-lg btn-success" onClick={props.comprobar}>
+                <button type="button" className="btn btn-success" onClick={props.comprobar}>
                     {lang.dictionary["submit"]}
+                    <FontAwesomeIcon icon={faPaperPlane} />
                 </button>
             </div>
         </>

@@ -12,6 +12,10 @@ code {
     monospace;
 }
 
+.main {
+  margin-top: 10px;
+}
+
 .titulo {
   display: flex;
   flex-direction: row;
@@ -35,63 +39,6 @@ code {
 .imagen {
   width: 100%;
 }
-
-/*h1, h2, h3, h4 {
-  margin: 0;
-}
-
-h1 {
-  color: #ffffff;
-  padding: 15px 15px;
-}
-
-h2 {
-  padding: 10px 15px;
-}
-
-h3 {
-  padding: 8px 15px;
-}
-
-p {
-  padding: 0px 15px;
-}
-
-.img {
-  margin: 10px 15px;
-  width: 80%;
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-li {
-  list-style: none;
-}
-
-li a:hover, li a:focus {
-  color: #ffffff;
-}
-
-.titulo {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #2b6aa1;
-}
-
-nav {
-  background-color: #c8d8e5;
-  height: 50px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-evenly;
-}*/
 
 .tictactoe {
   margin-top: 15px;

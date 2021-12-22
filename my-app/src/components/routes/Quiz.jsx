@@ -1,7 +1,11 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import Game from '../Quiz/Game';
 import Shortcut from '../Quiz/Shortcut';
 import { LangContext } from '../App';
+
+const horasTimer = 0;
+const minutosTimer = 10;
+const segundosTimer = 0;
 
 export default function Quiz(props) {
 
@@ -13,7 +17,34 @@ export default function Quiz(props) {
     const [answers, setAnswers] = useState(['', '', '', '', '', '', '', '', '', '']);
     const [inputValue, setInputValue] = useState("");
     const [contadorPistas, setContadorPistas] = useState(3);
+    const [horas, setHoras] = useState(horasTimer);
+    const [minutos, setMinutos] = useState(minutosTimer);
+    const [segundos, setSegundos] = useState(segundosTimer); 
     const lang = useContext(LangContext);
+
+    const tictac = () => {
+        if (horas === 0 && minutos === 0 && segundos === 0) 
+            comprobar();
+        else if (minutos === 0 && segundos === 0) {
+            setHoras(horas - 1);
+            setMinutos(59);
+            setSegundos(59);
+        } else if (segundos === 0) {
+            setMinutos(minutos - 1);
+            setSegundos(59);
+        } else {
+            setSegundos(segundos - 1);
+        }
+    }
+
+    useEffect(() => {
+        if(finished === false){
+            const timerId = setInterval(() => tictac(), 1000);
+            return () => clearInterval(timerId);     
+        }else{
+            return
+        }
+    });
 
     const previous = () => {
         let id = currentQuiz;
@@ -76,6 +107,9 @@ export default function Quiz(props) {
         setCurrentQuiz(0);
         setInputValue("");
         setContadorPistas(3);
+        setHoras(horasTimer);
+        setMinutos(minutosTimer);
+        setSegundos(segundosTimer);
     }
 
     const pista = () => {
@@ -109,7 +143,7 @@ export default function Quiz(props) {
                             <div className='row mt-2'>
                                 <div className='col-12 btn-group' role="group" aria-label="Basic outlined example">
                                     {props.quizzes.map((quiz, index) =>
-                                        <Shortcut key={index} number={index} indice={indice} />
+                                        <Shortcut key={index} number={index} indice={indice} contestado={answers[index]}/>
                                     )}
                                 </div>
                             </div>
@@ -123,7 +157,8 @@ export default function Quiz(props) {
                                 comprobar={comprobar}
                                 quizDownload2={quizDownload2}
                                 pista={pista}
-                                contadorPistas={contadorPistas} />
+                                contadorPistas={contadorPistas}
+                                horas={horas} minutos={minutos} segundos={segundos} />
                         </>
                     )
                 }

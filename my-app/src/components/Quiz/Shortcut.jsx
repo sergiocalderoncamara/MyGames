@@ -11,7 +11,17 @@ export default function Shortcut(props) {
 
     return (
         <>
-            <button type="button" className="btn btn-outline-primary" onClick={seleccion}>{props.number + 1}</button>
+            {(() => {
+                if (props.contestado !== '') {
+                    return (
+                        <button type="button" className="btn btn-outline-warning" onClick={seleccion}>{props.number + 1}</button>
+                    )
+                } else {
+                    return (
+                        <button type="button" className="btn btn-outline-primary" onClick={seleccion}>{props.number + 1}</button>
+                    )
+                }
+            })()}
         </>
     );
 }

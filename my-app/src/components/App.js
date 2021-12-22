@@ -41,15 +41,17 @@ function App(props) {
   return (
     <>
       <LangContext.Provider value={{ handleLanguageChange: handleLanguageChange, userLang: lang, dictionary: dictionaryList[lang] }}>
-        <Menu />
-        <div className='container'>
+        <header>
+          <Menu />
+        </header>
+        <body className='container'>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/tictactoe" element={<TicTacToe />} />
             <Route path="/quiz" element={<Quiz quizzes={quizzes} appDownload2={download}/>} />
           </Routes>
-        </div>
-        <Footer />
+        </body>
+          <Footer />
       </LangContext.Provider>
     </>
   );
