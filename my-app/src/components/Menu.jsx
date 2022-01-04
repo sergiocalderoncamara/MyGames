@@ -21,6 +21,7 @@ export default function Menu(props) {
                         <Nav className="me-auto">
                             <Nav.Link href="/tictactoe">{lang.dictionary['tictactoe']}</Nav.Link>
                             <Nav.Link href="/quiz">{lang.dictionary['quiz']}</Nav.Link>
+                            <Nav.Link href="/pokedex">Pokedex</Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
