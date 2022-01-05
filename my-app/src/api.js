@@ -44,10 +44,11 @@ export const updateAPI = async (quizzes) => {
 
 //API Pokedex
 
-export const getPokedex = async () => {
+export const getPokedex = async (index) => {
     try {
-        const res = await fetch("https://pokeapi.co/api/v2/pokemon");
-        return res.json();
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${index}`);
+        const data = await res.json();
+        return data;
     } catch (e) {
         alert("No se ha podido recuperar la información.")
     }

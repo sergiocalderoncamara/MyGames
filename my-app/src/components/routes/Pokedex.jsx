@@ -1,21 +1,22 @@
 import React from "react";
 import { useState, useEffect } from "react";
+import { CardGroup } from "react-bootstrap";
 import { getPokedex } from "../../api";
-import { pokemonInit } from "../../assets/pokemon";
 import Pokemon from "./../Pokedex/Pokemon";
 
 export default function Pokedex(props) {
 
-    const [pokemons, setPokemons] = useState(pokemonInit);
-    console.log(pokemons);
+    const [pokemons, setPokemons] = useState([]);
 
     const download = async () => {
-        let downloadedPokemons = await getPokedex();
-        setPokemons([downloadedPokemons]);
-        console.log(pokemons);
+        let downloadedPokemons = [];
+        for (let index = 1; index < 151; index++) {
+            downloadedPokemons[index - 1] = await getPokedex(index);
+        }
+        setPokemons(downloadedPokemons);
     }
 
-    /*useEffect(() => {
+    useEffect(() => {
         async function fetchData() {
             try {
                 await download();
@@ -24,13 +25,18 @@ export default function Pokedex(props) {
             }
         }
         fetchData();
-    }, []);*/
+    }, []);
 
     return (
         <>
-        {pokemons.map((pokemon, index) => 
-            <Pokemon key={index} pokemon={pokemon}/>
-        )}
+            <div>
+                {pokemons.map((pokemon, index) =>
+                    <CardGroup className="m-5 d-block">
+                        <Pokemon key={index} pokemon={pokemon} />
+                    </CardGroup>
+                )}
+
+            </div>
         </>
     );
 }

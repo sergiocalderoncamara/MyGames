@@ -1,26 +1,23 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Row, Col } from "react-bootstrap";
+import Stat from "./Stat";
 
 export default function Pokemon(props) {
 
     return (
-        <>
-            <Card style={{ width: '18rem' }}>
+            <Card className="m-5 border-0 shadow" bg='light' text='dark' style={{ width: '20rem' }}>
+                <Card.Img className="imagenPokemon" variant="top" src={props.pokemon.sprites.front_default} />
                 <Card.Body>
-                    <Card.Title>{props.pokemon.name}</Card.Title>
+                    <Card.Title>#{props.pokemon.id}</Card.Title>
                     <Card.Text>
-                        <div>ID: {props.pokemon.id}</div>
-                        <div>HP: {props.pokemon.stats.hp}</div>
-                        <div>ATTACK: {props.pokemon.stats.attack}</div>
-                        <div>DEFENSE: {props.pokemon.stats.defense}</div>
-                        <div>SPECIAL ATTACK: {props.pokemon.stats.sp_atk}</div>
-                        <div>SPECIAL DEFENSE: {props.pokemon.stats.sp_def}</div>
-                        <div>SPEED: {props.pokemon.stats.speed}</div>
-                        <div>TOTAL: {props.pokemon.stats.total}</div>
+                        {(props.pokemon.name).toUpperCase()}
+                        <ul>
+                            {props.pokemon.stats.map(item => (
+                                <Stat key={item.stat.name} item={item} />
+                            ))}
+                        </ul>
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
             </Card>
-        </>
     );
 }
