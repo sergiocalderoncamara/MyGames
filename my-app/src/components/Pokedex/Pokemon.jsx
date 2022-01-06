@@ -5,7 +5,7 @@ import Stat from "./Stat";
 export default function Pokemon(props) {
 
     return (
-            <Card className="m-5 border-0 shadow" bg='light' text='dark' style={{ width: '20rem' }}>
+            <Card className="my-3 p-3 border-0 shadow" bg='light' text='dark' style={{ width: '20rem' }}>
                 <Card.Img className="imagenPokemon" variant="top" src={props.pokemon.sprites.front_default} />
                 <Card.Body>
                     <Card.Title>#{props.pokemon.id}</Card.Title>
