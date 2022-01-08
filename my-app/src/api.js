@@ -1,3 +1,5 @@
+//API Quizzes
+
 const TOKEN = 'ddaac0a66fc4cc2a801f';
 
 export const postAPI = async (quizzes) => {
@@ -37,5 +39,17 @@ export const updateAPI = async (quizzes) => {
     } catch(e) {
         alert("Ha ocurrido un error");
         return;
+    }
+}
+
+//API Pokedex
+
+export const getPokedex = async (index) => {
+    try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${index}`);
+        const data = await res.json();
+        return data;
+    } catch (e) {
+        alert("No se ha podido recuperar la información.")
     }
 }
