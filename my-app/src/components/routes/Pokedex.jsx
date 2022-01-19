@@ -35,8 +35,8 @@ export default function Pokedex(props) {
             {loading ? (<Loader/>) : (
                 <Row>
                     {pokemons.map((pokemon, index) =>
-                        <Col key={index} xs={12} sm={12} md={4} lg={4} xl={4} >
-                            <CardGroup className="m-5 d-block">
+                        <Col key={index} xs={12} sm={12} md={3} lg={3} xl={3} >
+                            <CardGroup className="m-10 d-block">
                                 <Pokemon pokemon={pokemon} />
                             </CardGroup>
                         </Col>

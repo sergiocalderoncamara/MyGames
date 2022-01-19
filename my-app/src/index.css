@@ -69,3 +69,45 @@ code {
   padding: 1rem;
 }
 
+.rock {
+  background-color: rgb(189, 123, 93);
+}
+.ghost {
+  background-color: rgb(247, 247, 247);
+}
+.electric {
+  background-color: rgb(255, 255, 161);
+}
+.bug {
+  background-color: #b8eb7f;
+}
+.poison {
+  background-color: #e0a7f6;
+}
+.normal {
+  background-color: #F4F4F4;
+}
+.fairy {
+  background-color: rgba(250, 164, 178, 0.863);
+}
+.fire {
+  background-color: #ff9797;
+}
+.grass {
+  background-color:#b9ffb6;
+}
+.water {
+  background-color:#E0F1FD;
+}
+.psychic {
+  background-color:#fa99c6;
+}
+.ground {
+  background-color: #c5ad5d;
+}
+.fighting {
+  background-color: #ffb066;
+}
+.dragon {
+  background-color: #8c6494;
+}
