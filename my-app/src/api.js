@@ -53,3 +53,13 @@ export const getPokedex = async (index) => {
         alert("No se ha podido recuperar la información.")
     }
 }
+
+export const searchPokedex = async (pokemon) => {
+    try {
+        const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+        const data = await res.json();
+        return data;
+    } catch (e) {
+        alert("No se ha podido recuperar la información.")
+    }
+}

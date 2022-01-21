@@ -7,12 +7,11 @@ export default function Header(props) {
     const lang = useContext(LangContext);
 
     return (
-      <Card>
+      <Card style={{marginBottom: 20}}>
         <Card.Body>
           <Card.Title>{lang.dictionary["turn"]}</Card.Title>
           <Card.Text>
             {props.text}
-            
           </Card.Text>
         </Card.Body>
       </Card>

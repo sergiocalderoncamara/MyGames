@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Row, Col } from "react-bootstrap";
+import { Card, Badge } from "react-bootstrap";
 import Stat from "./Stat";
 
 export default function Pokemon(props) {
@@ -11,12 +11,23 @@ export default function Pokemon(props) {
         <Card className={style} text='dark' style={{ width: '15rem' }}>
             <Card.Img className="imagenPokemon " variant="top" src={props.pokemon.sprites.front_default} />
             <Card.Body>
-                <Card.Title>#{props.pokemon.id}</Card.Title>
+                <Card.Title>
+                    <Badge bg="dark">
+                        #{props.pokemon.id}
+                    </Badge>
+                </Card.Title>
                 <Card.Text>
-                    <p>{(props.pokemon.name).toUpperCase()}</p>
-                    <h10>Type: {tipo1}</h10>
+                    <p style={{ fontFamily: 'cursive' }}>{(props.pokemon.name).toUpperCase()}</p>
+                    <h10 style={{ fontFamily: 'monospace' }}>
+                        {tipo1.toUpperCase()}
+                        {(() => {
+                            if (props.pokemon.types.length == 2) {
+                                return (<> / {props.pokemon.types[1].type.name.toUpperCase()} </>)
+                            }
+                        })()}
+                    </h10>
                 </Card.Text>
             </Card.Body>
-        </Card>
+        </Card >
     );
 }
